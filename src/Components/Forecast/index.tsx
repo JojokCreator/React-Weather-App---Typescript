@@ -15,10 +15,13 @@ function Forecast(props: FunctionProps) {
                 <p> The humidity is {props.weather?.main.humidity}%</p>
                 <p> The max temp is {props.weather?.main.temp_max}°C</p>
                 <p> The min temp is{props.weather?.main.temp_min}°C</p>
-                <img src="cloudy.png"></img>
-                </div>
-                : "Error type again"}
 
+                {(props.weather?.main.temp !== undefined && props.weather?.main.temp > 25) ?
+                <img src="cloudy.png"></img>
+                :
+                <img src="rainy.png"></img>}
+                </div>
+                : "Error city not found again"}
         </div>
     );
 }
