@@ -1,7 +1,7 @@
 import React from 'react';
-
+import { weatherinfo} from "../../App";
 type FunctionProps = {
-    weather: any
+    weather: weatherinfo
     
     // {
     //     main: {
@@ -18,9 +18,9 @@ type FunctionProps = {
 function Forecast(props: FunctionProps) {
     return (
         <div>
-            {(!props.weather?.message) ?
-                <p> this is the forecast {props.weather?.main.pressure}</p>
-                : "Error type again"}
+            {/* {(!props.weather?.message) ? */}
+                <p> this is the Pressure {props.weather?.main.pressure}</p>
+                {/* : "Error type again"} */}
         </div>
     );
 }

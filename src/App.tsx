@@ -25,7 +25,7 @@ const [city, setCity] = useState('')
     setWeather(body)
   }
 
-  const [weather, setWeather] = useState<weatherinfo>();
+  const [weather, setWeather] = useState<weatherinfo>({""});
   console.log(weather)
 
 
