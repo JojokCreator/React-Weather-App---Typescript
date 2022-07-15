@@ -3,7 +3,7 @@ import './App.css';
 import Button from './Components/Button';
 import Forecast from './Components/Forecast';
 import Input from './Components/Input';
-
+import Header from './Components/Header/header'
 export type weatherinfo = {
   message: string
   main: {
@@ -33,7 +33,8 @@ const [city, setCity] = useState('')
 
   return (
     <div className="App">
-
+      
+      <Header/>
       <Input setCity={setCity}/>
       <Button onClick={getForecast} />
       <Forecast weather={weather} />
