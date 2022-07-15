@@ -1,8 +1,15 @@
 import React from 'react';
 
-function Input() {
+type FunctionProps = {
+    setCity: React.Dispatch<React.SetStateAction<string>>
+}
+
+function Input(props: FunctionProps) {
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        props.setCity(e.target.value)
+    }
     return (
-        <input></input>
+        <input onChange={handleChange}></input>
     );
 }
 

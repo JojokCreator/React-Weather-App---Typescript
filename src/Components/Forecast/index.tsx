@@ -2,8 +2,7 @@ import React from 'react';
 
 type FunctionProps = {
     weather: any
-    }
-
+}
 
 function Forecast(props: FunctionProps) {
     
@@ -13,7 +12,5 @@ function Forecast(props: FunctionProps) {
         </div>
     );
 }
-
-
 
 export default Forecast;
