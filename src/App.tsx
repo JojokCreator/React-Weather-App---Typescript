@@ -1,16 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 import Button from './Components/Button';
+import Forecast from './Components/Forecast';
 import Input from './Components/Input';
 
 function App() {
+const [weather,setWeather] = useState();
   return (
     <div className="App">
-      <header className="App-header">
-    
-      </header>
+      
       <Input/>
-      <Button/>
+      <Button setWeather = {setWeather}/>
+      <Forecast/>
 
     </div>
   );
