@@ -5,6 +5,7 @@ import Forecast from './Components/Forecast';
 import Input from './Components/Input';
 
 export type weatherinfo = {
+  message: string
   main: {
     feels_like: number,
     humidity: number,
@@ -25,7 +26,7 @@ const [city, setCity] = useState('')
     setWeather(body)
   }
 
-  const [weather, setWeather] = useState<weatherinfo>({""});
+  const [weather, setWeather] = useState<weatherinfo>();
   console.log(weather)
 
 
