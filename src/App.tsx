@@ -4,6 +4,18 @@ import Button from './Components/Button';
 import Forecast from './Components/Forecast';
 import Input from './Components/Input';
 
+export type weatherinfo = {
+  main: {
+    feels_like: number,
+    humidity: number,
+    pressure: number,
+    temp: number,
+    temp_max: number,
+    temp_min: number,
+  }
+};
+
+
 function App() {
 const [city, setCity] = useState('')
 
@@ -13,19 +25,11 @@ const [city, setCity] = useState('')
     setWeather(body)
   }
 
-  const [weather, setWeather] = useState<weatherinfo | null>();
+  const [weather, setWeather] = useState<weatherinfo>();
+  console.log(weather)
 
-  type weatherinfo = {
-    main: {
-      feels_like: number,
-      humidity: number,
-      pressure: number,
-      temp: number,
-      temp_max: number,
-      temp_min: number,
-    }
 
-  };
+
   return (
     <div className="App">
 
