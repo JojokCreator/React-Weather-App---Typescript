@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 .App {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-family: "Ubuntu";
+  background-image: url("https://images3.alphacoders.com/109/1091500.jpg");
+  background-size: cover;
+  background-position: top center;
   text-align: center;
   padding: 100px;
+  color: white;
 }
 
 .App-logo {
@@ -36,4 +46,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+p {
+  font-size: 1.25em;
+}
+
+ input {
+  width: 100%;
+  /* max-width: 280px; */
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(18, 18, 18, 0.4);
+  border-radius: 16px;
+  border-bottom: 3px solid #df8e00;
+
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+  color: #eeeeee;
+}
+ input:focus {
+  background-color: rgba(18, 18, 18, 0.8);
+}
+
+button {
+  
+    padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #0162c8, #55e7fc);
+    overflow: hidden;
+}
+
+button:hover {
+  opacity: 80%;
 }
