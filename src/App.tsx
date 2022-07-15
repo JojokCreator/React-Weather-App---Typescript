@@ -11,7 +11,6 @@ const [city, setCity] = useState('')
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
     const body = await response.json()
     setWeather(body)
-    console.log(city)
   }
 
   const [weather, setWeather] = useState<weatherinfo | null>();
