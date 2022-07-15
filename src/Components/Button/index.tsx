@@ -1,16 +1,13 @@
 import React from 'react';
 
-function Button () {
+type ButtonProps = {
+    onClick: () => void
+}
 
-    async function getForecast () {
-        const city = "London"
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`)
-        const body = await response.json()
-      
-    console.log (body);
-    }
+function Button (props: ButtonProps) {
+
     return (
-       <button onClick= {getForecast}>Click Me </button>
+       <button onClick={props.onClick}>Click Me </button>
     );
 }
 
