@@ -1,13 +1,15 @@
-import React from 'react';
+import { useThemeContext } from '../../Context/ThemeContext';
 
 type ButtonProps = {
     onClick: () => void
 }
 
 function Button (props: ButtonProps) {
+    const { dark, day, night } = useThemeContext();
+    const theme = dark ? day : night;
 
     return (
-       <button onClick={props.onClick}>Click Me </button>
+       <button style={{ background: theme.ui, color: theme.syntax }} onClick={props.onClick}>Click Me </button>
     );
 }
 
