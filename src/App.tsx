@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import Button from './Components/Button';
+import ButtonComp from './Components/Button';
 import Forecast from './Components/Forecast';
-import Input from './Components/Input';
+import Form from './Components/Input';
 import Header from './Components/Header/header'
 import { useThemeContext } from './Context/ThemeContext';
 
@@ -41,8 +41,8 @@ const theme = dark ? day : night;
   return (
       <div className="App" style={{ background: theme.ui, color: theme.syntax }}>
       <Header />
-      <Input setCity={setCity}/>
-      <Button onClick={getForecast} />
+      <Form setCity={setCity}/>
+      <ButtonComp onClick={getForecast} />
       <Forecast weather={weather} />
       </div>
   );

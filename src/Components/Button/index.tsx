@@ -1,16 +1,17 @@
 import { useThemeContext } from '../../Context/ThemeContext';
+import { Button } from '@mantine/core';
 
 type ButtonProps = {
     onClick: () => void
 }
 
-function Button (props: ButtonProps) {
+function ButtonComp (props: ButtonProps) {
     const { dark, day, night } = useThemeContext();
     const theme = dark ? day : night;
 
     return (
-       <button style={{ background: theme.ui, color: theme.syntax }} onClick={props.onClick}>Click Me </button>
+       <Button styles={{ root: {background: theme.input, color: theme.syntax }}} onClick={props.onClick}>Click Me </Button>
     );
 }
 
-export default Button;
+export default ButtonComp;

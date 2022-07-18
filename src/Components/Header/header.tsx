@@ -1,4 +1,5 @@
 import { useThemeContext } from '../../Context/ThemeContext';
+import { Switch  } from '@mantine/core';
 
 function Header() {
     const { dark, day, night, toggleDark } = useThemeContext();
@@ -6,7 +7,7 @@ function Header() {
 
     return (
         <div style={{ background: theme.ui, color: theme.syntax }}>
-            <button className="toggle" style={{ background: theme.ui, color: theme.syntax }} onClick={toggleDark}>Toggle mode</button>
+            <Switch label={(dark) ? 'Light' : 'Dark'} size="xl" className="toggle" onClick={toggleDark}>Toggle mode</Switch>
             <h1 >Weather Forecast</h1>
         </div>
     );
