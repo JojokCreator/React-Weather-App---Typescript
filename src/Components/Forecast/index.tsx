@@ -1,27 +1,37 @@
 import React from 'react';
 import { weatherinfo} from "../../App";
-type FunctionProps = {
+import '../../App.css';
+import { WiBarometer, WiThermometer, WiThermometerExterior, WiRaindrop } from "react-icons/wi";
+import { useThemeContext } from '../../Context/ThemeContext';
+
+
+interface FunctionProps {
     weather: weatherinfo | undefined
 }
 
-function Forecast(props: FunctionProps) {
+function Forecast ({weather} :FunctionProps) {
+    const { dark, day, night } = useThemeContext();
+    const theme = dark ? day : night;
+    console.log(weather)
     return (
         <div>
-            {(!props.weather?.message) ?
-            <div>
-                <h1> {props.weather?.main.temp}°C</h1>
-                <p> The pressure is, {props.weather?.main.pressure} hpa</p>
-                <p> Feels Like {props.weather?.main.feels_like}°C</p>
-                <p> The humidity is {props.weather?.main.humidity}%</p>
-                <p> The max temp is {props.weather?.main.temp_max}°C</p>
-                <p> The min temp is{props.weather?.main.temp_min}°C</p>
-
-                {(props.weather?.main.temp !== undefined && props.weather?.main.temp > 25) ?
-                <img src="cloudy.png"></img>
-                :
-                <img src="rainy.png"></img>}
+            {(weather) ?
+            <div style={{ background: theme.ui, color: theme.syntax }} className="row">
+                <div className="row">
+                <div className="col">
+                <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt="icon"></img>
+                <p> {weather.description}</p>
                 </div>
-                : "Error city not found again"}
+                <h1> {Math.round(weather.temp)}°C</h1>
+                <div className="col align">
+                <h2> Feels Like {Math.round(weather.feels_like)}°C</h2>
+                <p> <WiThermometer />{Math.round(weather.temp_max)}°C  <WiThermometerExterior/> {Math.round(weather.temp_min)}°C</p>
+                <p> <WiBarometer/> Pressure {weather.pressure} hpa</p>
+                <p> <WiRaindrop/> Humidity {weather.humidity}%</p>
+                </div>
+                </div>
+            </div>
+                : <p>Please Enter a City To Search For</p>}
         </div>
     );
 }

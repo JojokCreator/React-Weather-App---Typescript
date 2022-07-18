@@ -1,79 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu:wght@300;400;500&display=swap');
+
+:root {
+--font-xl: clamp(2rem, 10vw, 5rem);
+--font-600: 3rem;
+--font-400: 1.75rem;
+}
+
+/* @media screen and (max-width: 700px) {
+  :root {
+  --font-xl: clamp(2rem, 10vw, 5rem);
+  --font-600: 2rem;
+  --font-400: 1rem;
+  }
+} */
+
+body {
+  min-height: 100vh;
+}
+
 .App {
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   font-family: "Ubuntu";
-  background-image: url("https://images3.alphacoders.com/109/1091500.jpg");
-  background-size: cover;
-  background-position: top center;
   text-align: center;
-  padding: 100px;
-  color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  padding: 2em;
 }
 
 p {
-  font-size: 1.25em;
+  font-size: var(--font-400);
 }
 
  input {
-  width: 100%;
-  /* max-width: 280px; */
-  padding: 10px 15px;
+  padding: 0.75em 2.25em;
+  margin: 0.625em 0;
   border: none;
   outline: none;
   background-color: rgba(18, 18, 18, 0.4);
   border-radius: 16px;
   border-bottom: 3px solid #df8e00;
-
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 300;
   transition: 0.2s ease-out;
-  color: #eeeeee;
+  overflow: hidden;
 }
  input:focus {
   background-color: rgba(18, 18, 18, 0.8);
 }
 
 button {
-  
-    padding: 12px 36px;
+    padding: 0.75em 2.25em;
     margin: 10px 0;
     color: #fff;
     text-decoration: none;
@@ -81,10 +57,38 @@ button {
     font-size: 18px;
     letter-spacing: 2px;
     border-radius: 40px;
-    background: linear-gradient(90deg, #0162c8, #55e7fc);
     overflow: hidden;
 }
 
 button:hover {
   opacity: 80%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.align {
+  text-align: left;
+}
+h1 {
+  font-size: var(--font-xl);
+}
+.toggle {
+  float: right;
+  width: 20vw;
+  min-width:150px;
+
+}
+@media screen and (max-width: 700px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .align {
+    text-align: center;
+  }
 }
