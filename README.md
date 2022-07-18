@@ -1,4 +1,6 @@
-# React/TypeScript Hackathon School of code week 12
+# React/TypeScript Weather Today App.
+
+[live version here](https://react-weather-typescript.netlify.app)
 
 As part of School of Code I built a weather checker app using TypeScript and React with another bootcamper using pair programming.
 
@@ -19,6 +21,6 @@ Run npm install and then npm start. The app should be live on local host 3000.
 
 ## Additional plans
 
-- UI/component libraries
+- UI/component libraries - Added a little Mantine UI
 
 - Tests
